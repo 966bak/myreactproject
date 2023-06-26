@@ -14,7 +14,7 @@ const Ecommerce = () => {
   const [cartState, setCartState] = useState(false);
   const [searchTerm, setSearchTerm] = useState(""); 
   //all product fetching
-  const API = "http://localhost:8900/products";
+  const API = "https://ecommerceserver-nugf.onrender.com/products";
   const [products, setProducts] = useState([]);
   const fetchApiData = async (url) => {
     try {
@@ -31,7 +31,7 @@ const Ecommerce = () => {
     }
   };
   //cart fetching
-  const CART_API = "http://localhost:8900/cart";
+  const CART_API = "https://ecommerceserver-nugf.onrender.com/cart";
   const [cartData, setCartData] = useState([]);
   const fetchCartData = async (url) => {
     try {
@@ -54,7 +54,7 @@ const Ecommerce = () => {
   }, []);
   const handleCart = (item) => {
     setCartState(true);
-    fetch("http://localhost:8900/cart", {
+    fetch("https://ecommerceserver-nugf.onrender.com/cart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +75,7 @@ const Ecommerce = () => {
       });
   };
   const handleRemove = (item) => {
-    fetch(`http://localhost:8900/cart/${item.id}`, {
+    fetch(`https://ecommerceserver-nugf.onrender.com/cart/${item.id}`, {
       method: "DELETE",
     })
       .then((response) => {
